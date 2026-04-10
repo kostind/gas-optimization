@@ -11,12 +11,12 @@ contract CachingStorageReadsTest is Test {
         cachingStorageReads = new CachingStorageReads();
     }
 
-    function test_processOptimized() public {
-        cachingStorageReads.processOptimized();
-    }
-
     function test_processExpensive() public {
         cachingStorageReads.processExpensive();
+    }
+
+    function test_processOptimized() public {
+        cachingStorageReads.processOptimized();
     }
 
 }

@@ -2,13 +2,12 @@
 pragma solidity ^0.8.13;
 
 contract CachingStorageReads {
-
-    uint public number = 1;
+    uint256 public number = 1;
 
     function processOptimized() external {
-        uint numberCache = number;
+        uint256 numberCache = number;
 
-        for (uint i = 0; i < 100; i++) {
+        for (uint256 i = 0; i < 100; i++) {
             numberCache += i;
         }
 
@@ -16,9 +15,8 @@ contract CachingStorageReads {
     }
 
     function processExpensive() external {
-        for (uint i = 0; i < 100; i++) {
+        for (uint256 i = 0; i < 100; i++) {
             number += i; // 100 storage reads and writes
         }
     }
-
 }
