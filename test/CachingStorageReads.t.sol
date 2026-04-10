@@ -18,5 +18,4 @@ contract CachingStorageReadsTest is Test {
     function test_processOptimized() public {
         cachingStorageReads.processOptimized();
     }
-
 }
