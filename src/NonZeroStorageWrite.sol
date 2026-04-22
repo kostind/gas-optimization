@@ -8,6 +8,7 @@ contract NonZeroStorageWrite {
     uint256 private constant NOT_ENTERED_OPTIMIZED = 2;
     uint256 private constant ENTERED_OPTIMIZED = 3;
 
+    uint256 internal state;
     bool internal invoked;
 
     error ReentrantCall();
