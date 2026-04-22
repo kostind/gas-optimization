@@ -2,13 +2,13 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {CachingStorageReads} from "../src/CachingStorageReads.sol";
+import {CacheStorageReads} from "../src/CacheStorageReads.sol";
 
 contract CachingStorageReadsTest is Test {
-    CachingStorageReads public cachingStorageReads;
+    CacheStorageReads public cachingStorageReads;
 
     function setUp() public {
-        cachingStorageReads = new CachingStorageReads();
+        cachingStorageReads = new CacheStorageReads();
     }
 
     function test_processExpensive() public {
