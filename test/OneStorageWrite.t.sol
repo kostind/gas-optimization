@@ -5,17 +5,17 @@ import {Test} from "forge-std/Test.sol";
 import {OneStorageWrite} from "../src/OneStorageWrite.sol";
 
 contract OneStorageWriteTest is Test {
-    OneStorageWrite public oneStorageWrite;
+    OneStorageWrite public contractInstance;
 
     function setUp() public {
-        oneStorageWrite = new OneStorageWrite();
+        contractInstance = new OneStorageWrite();
     }
 
     function test_processExpensive() public {
-        oneStorageWrite.processExpensive();
+        contractInstance.processExpensive();
     }
 
     function test_processOptimized() public {
-        oneStorageWrite.processOptimized();
+        contractInstance.processOptimized();
     }
 }
