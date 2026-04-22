@@ -2,20 +2,22 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {NonZeroStorageWrite} from "../src/NonZeroStorageWrite.sol";
+import "../src/NonZeroStorageWrite.sol";
 
 contract NonZeroStorageWriteTest is Test {
-    NonZeroStorageWrite public contractInstance;
+    ZeroStorageWrite public zeroInstance;
+    NonZeroStorageWrite public nonZeroInstance;
 
     function setUp() public {
-        contractInstance = new NonZeroStorageWrite();
+        zeroInstance = new ZeroStorageWrite();
+        nonZeroInstance = new NonZeroStorageWrite();
     }
 
     function test_processExpensive() public {
-        contractInstance.processExpensive();
+        zeroInstance.processExpensive();
     }
 
     function test_processOptimized() public {
-        contractInstance.processOptimized();
+        nonZeroInstance.processOptimized();
     }
 }
