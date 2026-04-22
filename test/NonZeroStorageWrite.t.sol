@@ -5,19 +5,19 @@ import {Test} from "forge-std/Test.sol";
 import "../src/NonZeroStorageWrite.sol";
 
 contract NonZeroStorageWriteTest is Test {
-    ZeroStorageWrite public zeroInstance;
-    NonZeroStorageWrite public nonZeroInstance;
+    Zero2NonZeroStorageWrite public zero2NonZeroInstance;
+    NonZero2NonZeroStorageWrite public nonZero2NonZeroInstance;
 
     function setUp() public {
-        zeroInstance = new ZeroStorageWrite();
-        nonZeroInstance = new NonZeroStorageWrite();
+        zero2NonZeroInstance = new Zero2NonZeroStorageWrite();
+        nonZero2NonZeroInstance = new NonZero2NonZeroStorageWrite();
     }
 
     function test_processExpensive() public {
-        zeroInstance.processExpensive();
+        zero2NonZeroInstance.processExpensive();
     }
 
     function test_processOptimized() public {
-        nonZeroInstance.processOptimized();
+        nonZero2NonZeroInstance.processOptimized();
     }
 }

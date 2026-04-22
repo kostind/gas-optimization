@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-contract ZeroStorageWrite {
+contract Zero2NonZeroStorageWrite {
     uint256 private constant NOT_ENTERED_EXPENSIVE = 0;
     uint256 private constant ENTERED_EXPENSIVE = 1;
 
@@ -22,7 +22,7 @@ contract ZeroStorageWrite {
     }
 }
 
-contract NonZeroStorageWrite {
+contract NonZero2NonZeroStorageWrite {
     uint256 private constant NOT_ENTERED_OPTIMIZED = 2;
     uint256 private constant ENTERED_OPTIMIZED = 3;
 
