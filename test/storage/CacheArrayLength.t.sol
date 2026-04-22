@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {CacheArrayLength} from "../src/CacheArrayLength.sol";
+import {CacheArrayLength} from "src/storage/CacheArrayLength.sol";
 
 contract CachingStorageReadsTest is Test {
     CacheArrayLength public contractInstance;

@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {OneStorageWrite} from "../src/OneStorageWrite.sol";
+import {OneStorageWrite} from "src/storage/OneStorageWrite.sol";
 
 contract OneStorageWriteTest is Test {
     OneStorageWrite public contractInstance;
