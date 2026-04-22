@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import "../src/NonZeroStorageWrite.sol";
+import "../src/NonZero2NonZeroStorageWrite.sol";
 
 contract NonZeroStorageWriteTest is Test {
     Zero2NonZeroStorageWrite public zero2NonZeroInstance;
