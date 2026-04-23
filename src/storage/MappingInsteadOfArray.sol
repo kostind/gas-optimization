@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {console} from "forge-std/console.sol";
-
 contract MappingInsteadOfArray {
     uint256 constant DEFAULT_LIQUIDITY_INDEX = 10 ** 18;
 
@@ -45,12 +43,15 @@ contract MappingInsteadOfArray {
     }
 
     function _updateLiquidityIndexUsingArray(uint256 tokenIndex) private {
-        uint256 liquidityIndex = tokenConfigArray[tokenIndex].liquidityIndex * 11 * 10 ** 17 / DEFAULT_LIQUIDITY_INDEX;
-        tokenConfigArray[tokenIndex].liquidityIndex = liquidityIndex;
+        tokenConfigArray[tokenIndex].liquidityIndex = _updateLiquidityIndex(tokenConfigArray[tokenIndex].liquidityIndex);
     }
 
     function _updateLiquidityIndexUsingMapping(uint256 tokenIndex) private {
-        uint256 liquidityIndex = tokenConfigMapping[tokenIndex].liquidityIndex * 11 * 10 ** 17 / DEFAULT_LIQUIDITY_INDEX;
-        tokenConfigMapping[tokenIndex].liquidityIndex = liquidityIndex;
+        tokenConfigMapping[tokenIndex].liquidityIndex =
+            _updateLiquidityIndex(tokenConfigMapping[tokenIndex].liquidityIndex);
+    }
+
+    function _updateLiquidityIndex(uint256 liquidityIndex) private returns (uint256) {
+        return liquidityIndex * 11 * 10 ** 17 / DEFAULT_LIQUIDITY_INDEX;
     }
 }
