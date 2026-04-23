@@ -10,10 +10,10 @@ contract MappingInsteadOfArray {
         uint256 liquidityIndex;
     }
 
-    mapping(uint256 => TokenConfig) tokenConfigMapping;
-    uint256 tokenCount;
+    mapping(uint256 => TokenConfig) public tokenConfigMapping;
+    uint256 public tokenCount;
 
-    TokenConfig[] tokenConfigArray;
+    TokenConfig[] public tokenConfigArray;
 
     constructor() {
         for (uint256 i = 0; i < 10; i++) {
