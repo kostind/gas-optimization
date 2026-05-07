@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import "../../src/error/ErrorMessage.sol";
+import {ErrorMessage} from "../../src/error/ErrorMessage.sol";
 
 contract ErrorMessageTest is Test {
     ErrorMessage public contractInstance;

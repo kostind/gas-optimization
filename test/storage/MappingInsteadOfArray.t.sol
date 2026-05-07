@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import "../../src/storage/MappingInsteadOfArray.sol";
+import {MappingInsteadOfArray} from "../../src/storage/MappingInsteadOfArray.sol";
 
 contract MappingInsteadOfArrayTest is Test {
     MappingInsteadOfArray public contractInstance;
