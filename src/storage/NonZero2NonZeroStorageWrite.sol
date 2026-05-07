@@ -11,9 +11,17 @@ contract Zero2NonZeroStorageWrite {
     error ReentrantCall();
 
     modifier nonReentrantExpensive() {
+        nonReentrantExpensiveBefore();
+        _;
+        nonReentrantExpensiveAfter();
+    }
+
+    function nonReentrantExpensiveBefore() internal {
         require(state != ENTERED_EXPENSIVE, ReentrantCall());
         state = ENTERED_EXPENSIVE;
-        _;
+    }
+
+    function nonReentrantExpensiveAfter() internal {
         state = NOT_ENTERED_EXPENSIVE;
     }
 
@@ -36,9 +44,17 @@ contract NonZero2NonZeroStorageWrite {
     }
 
     modifier nonReentrantOptimized() {
+        nonReentrantOptimizedBefore();
+        _;
+        nonReentrantOptimizedAfter();
+    }
+
+    function nonReentrantOptimizedBefore() internal {
         require(state != ENTERED_OPTIMIZED, ReentrantCall());
         state = ENTERED_OPTIMIZED;
-        _;
+    }
+
+    function nonReentrantOptimizedAfter() internal {
         state = NOT_ENTERED_OPTIMIZED;
     }
 
