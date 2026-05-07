@@ -27,7 +27,7 @@ contract StorageReferenceInsteadOfMemory {
         tokenConfig.liquidityIndex = _updateLiquidityIndex(_tokenConfig.liquidityIndex);
     }
 
-    function _updateLiquidityIndex(uint256 liquidityIndex) private returns (uint256) {
+    function _updateLiquidityIndex(uint256 liquidityIndex) private pure returns (uint256) {
         return liquidityIndex * 11 * 10 ** 17 / DEFAULT_LIQUIDITY_INDEX;
     }
 }
