@@ -17,7 +17,7 @@ contract Assembly4ExternalCall {
         uint256 x = 123;
         address _factory = factory;
         assembly {
-            mstore(0x00, "0x5b4b73a9") //setData(uint256)
+            mstore(0x00, hex"5b4b73a9") //setData(uint256)
             mstore(0x04, x)
 
             if iszero(extcodesize(_factory)) {
@@ -26,9 +26,9 @@ contract Assembly4ExternalCall {
 
             let success := call(gas(), _factory, 0x00, 0x00, 0x24, 0x00, 0x00)
 
-//            if iszero(success) {
-//                revert(0x00, 0x00)
-//            }
+            if iszero(success) {
+                revert(0x00, 0x00)
+            }
         }
     }
 }
